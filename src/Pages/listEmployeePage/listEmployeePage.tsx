@@ -1,35 +1,23 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { EmployeeList } from "../../components/employeelist/employeelist";
 import { LayoutHeading } from "../../components/LayoutHeading/LayoutHeading";
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { type RootState } from "../../store/store";
-import type {
-  Employee,
-  EmployeeState,
-} from "../../store/employee/employee.types";
+
+import type { Employee } from "../../store/employee/employee.types";
 import { useGetEmployeeListQuery } from "../../api-service/employees/employess.api";
 export let employees: Employee[] = [];
 
 export const ListEmployeePage = () => {
   const hook = useGetEmployeeListQuery();
-  console.log(hook.currentData);
- 
-  const employ = useSelector((state: EmployeeState) => state);
 
-  console.log("list", employ.employees);
-  let employees = employ.employee.employees;
+  const [getserchparams] = useSearchParams("");
 
-  const [getserchparams, setsearchParam] = useSearchParams("");
-  console.log(getserchparams.get("filter"));
-  let filteredList = hook.currentData;
-  // let filteredList = getserchparams.get("filter")
-  //   ? employees.filter(
-  //       (e) =>
-  //         e.status?.toLowerCase() ===
-  //         getserchparams.get("filter")?.toLowerCase()
-  //     )
-  //   : employees;
+  let filteredList = getserchparams.get("filter")
+    ? hook.currentData.filter(
+        (e) =>
+          e.status?.toLowerCase() ===
+          getserchparams.get("filter")?.toLowerCase()
+      )
+    : hook.currentData;
 
   console.log("here is the filtered list", filteredList);
 
@@ -39,7 +27,7 @@ export const ListEmployeePage = () => {
       <div style={{}}>
         <EmployeeList
           name={"Employee Name"}
-         id={"Employee Id"}
+          id={"Employee Id"}
           dateOfJoining={"joiningDate"}
           role={"Role"}
           status={"status"}

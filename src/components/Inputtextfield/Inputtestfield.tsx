@@ -1,21 +1,3 @@
-// import "./Inputtextfield.css";
-// export const Inputtextfield = ({
-//   type,
-//   placeholder = " ",
-// }: {
-//   type: string;
-//   placeholder: string;
-// }) => {
-//   return (
-//     <input
-//       type={type}
-//       name=""
-//       id=""
-//       className="Inputtextfield"
-//       placeholder={placeholder}
-//     />
-//   );
-// };
 import "./Inputtextfield.css";
 export const Inputtextfield = ({
   id,

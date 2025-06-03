@@ -1,7 +1,7 @@
 .heading_section .heading-end {
   display: flex;
 
-  /* background-color: brown; */
+
   justify-items: center;
 }
 .heading_section .heading-end p {

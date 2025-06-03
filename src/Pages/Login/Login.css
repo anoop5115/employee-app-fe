@@ -8,19 +8,19 @@ main {
 }
 .leftcontainer {
   width: 50%;
-  background-color: rgb(238, 3, 3);
+  background-color:rgba(3, 174, 238, 1);
+;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 .leftcontainer img {
   width: 500px;
   height: 450px;
   border-radius: 50%;
 
-  /* width: 500px; */
-  /* scale: 0.7; */
 }
 .rightcontainer {
   width: 50%;

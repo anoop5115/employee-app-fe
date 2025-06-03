@@ -1,12 +1,11 @@
-import { useActionState, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ClickButton } from "../../components/Button/Button";
 import { Inputtextfield } from "../../components/Inputtextfield/Inputtestfield";
 import { Labeltext } from "../../components/label/Label";
-import "./Login.css";
 import { useMousePostion } from "../../hooks/useMousePointer";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../api-service/auth/login.api";
-
+import "./Login.css";
 export const Login = () => {
   const [login] = useLoginMutation();
   const navigate = useNavigate();
@@ -32,7 +31,6 @@ export const Login = () => {
         navigate("/employee", { replace: true });
       })
       .catch((e) => {
-        // alert("incorrect credentials");
         setErr(e.data.message);
         setLoading("Login");
       });
@@ -58,24 +56,14 @@ export const Login = () => {
     }
   };
 
-  // const updatepass = (newpass: string) => {
-  //   setPassword(newpass);
-  // };
-  // const update = (newUsername: string) => {
-  //   setUsername(newUsername);
-  //   console.log(newUsername);
-  // };
   let pos = useMousePostion();
   let [err, setErr] = useState("");
   useEffect(() => {
-    // console.log(username);
     if (username.length > 10) {
       err = "not more than 10";
     } else {
       err = "";
     }
-
-    //
 
     setErr(err);
   }, [username]);
@@ -126,11 +114,6 @@ export const Login = () => {
 
               <p>{err}</p>
               <div>
-                {/* <ClickButton label={"login"}  ></ClickButton>
-                 */}
-                {/* <button type="button" onClick={verify}>
-                  Login
-                </button> */}
                 <ClickButton
                   type="button"
                   label={loading}
@@ -145,27 +128,3 @@ export const Login = () => {
     </>
   );
 };
-// function setLoading(arg0: string) {
-//   throw new Error("Function not implemented.");
-// }
-
-// function e(reason: any): PromiseLike<never> {
-//   throw new Error("Function not implemented.");
-// }
-// // Test 2: Render login form with all required elements
-// it("should render login form with all required elements", () => {
-//   renderLogin();
-
-//   // Check if username input is present
-//   const usernameInput = screen.getByLabelText("Username");
-//   expect(usernameInput).toBeInTheDocument();
-
-//   // Check if password input is present
-//   const passwordInput = screen.getByLabelText("Password");
-//   expect(passwordInput).toBeInTheDocument();
-
-//   // Check if submit button is present
-//   const submitButton = screen.getByRole("button", { name: /log in/i });
-//   expect(submitButton).toBeInTheDocument();
-//   expect(submitButton).toHaveAttribute("type", "submit");
-// });

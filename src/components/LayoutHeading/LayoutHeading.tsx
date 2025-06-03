@@ -36,10 +36,7 @@ export const LayoutHeading = ({
         {iscreate && (
           <div className="heading-end">
             <p>filter by</p>
-            {/* <SelectField
-              borderRadius={50} height={40}
-              options={["Active", "Inactive", "Probation"]}
-            ></SelectField> */}
+
             <select
               style={{ borderRadius: 30, height: 60 }}
               value={selectedValue}
@@ -76,13 +73,8 @@ export const LayoutHeading = ({
         )}
         {isedit && (
           <div className="heading-end">
-            {/* <p>filter by</p>
-        <SelectField
-          options={["Active", "Inactive", "Probation"]}
-        ></SelectField> */}
             <div
               onClick={() => {
-
                 navigate(`/employee/edit/${id}`);
               }}
               style={{

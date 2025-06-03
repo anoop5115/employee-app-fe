@@ -92,7 +92,6 @@ export const EmployeeList = ({
                 show={showModal}
                 onClose={() => setShowModal(false)}
               />
-              ;
             </div>
           )}
           {isActionText && <>Action</>}

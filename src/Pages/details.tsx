@@ -1,15 +1,10 @@
-import { use, useState } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { LayoutHeading } from "../components/LayoutHeading/LayoutHeading";
-import { FormSection } from "../components/formsection/formsection";
+
 import "./Login/details.css";
-import { EmployeeList } from "../components/employeelist/employeelist";
-import { employees } from "./listEmployeePage/listEmployeePage";
-import { useSelector } from "react-redux";
-import type { EmployeeState } from "../store/employee/employee.types";
-import { useGetEmployeeListQuery } from "../api-service/employees/employess.api";
+
+import { useGetEmployeeByIdQuery } from "../api-service/employees/employess.api";
 export const Details = () => {
-  const hook = useGetEmployeeListQuery();
   const statusColor = {
     probation: " #F5ECB8",
     active: " #D3F4BE",
@@ -17,16 +12,14 @@ export const Details = () => {
   };
 
   const { id } = useParams();
-  const employ = useSelector((state: EmployeeState) => state);
-
-  const user = hook.currentData.find((e) => e.id == id);
-  console.log(user);
+  const getEmployeeById = useGetEmployeeByIdQuery;
+  const user = getEmployeeById(id).data;
 
   return (
     <div>
       <LayoutHeading
         isedit={true}
-        text={`employee details of ${user?.employeeName}`}
+        text={`employee details of ${user?.name}`}
       ></LayoutHeading>
       <div className="mainbox">
         <div className="box1">

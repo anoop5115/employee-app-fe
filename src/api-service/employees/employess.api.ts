@@ -1,4 +1,4 @@
-import { createApi } from "@reduxjs/toolkit/query";
+
 import BaseApi from "../api";
 import type { employeeDetails, employeeResponse } from "./types";
 
@@ -34,6 +34,13 @@ export const employeeApi = BaseApi.injectEndpoints({
       }),
       invalidatesTags: ["EMPLOYEES"],
     }),
+
+    getEmployeeById: builder.query<employeeResponse, number>({
+      query: (id) => ({
+        url: `/employee/${id}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 export const {
@@ -41,4 +48,5 @@ export const {
   useCreateEmployeeMutation,
   useEditEmployeeMutation,
   useDeleteEmployeeMutation,
+  useGetEmployeeByIdQuery,
 } = employeeApi;
