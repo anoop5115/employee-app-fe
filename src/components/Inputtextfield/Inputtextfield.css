@@ -1,0 +1,10 @@
+.Inputtextfield {
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  background-color: rgba(250, 250, 250, 1);
+}
+
+.Inputtextfield:hover {
+  color: rgba(30, 180, 240, 1);
+}

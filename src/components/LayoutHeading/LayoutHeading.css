@@ -1,0 +1,21 @@
+.heading_section .heading-end {
+  display: flex;
+
+  /* background-color: brown; */
+  justify-items: center;
+}
+.heading_section .heading-end p {
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  justify-content: center;
+}
+.head-main {
+  display: flex;
+  justify-content: space-between;
+}
+.heading-end {
+  width: 35%;
+  display: flex;
+  justify-content: space-around;
+}

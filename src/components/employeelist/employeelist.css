@@ -1,0 +1,43 @@
+.Listhead ul {
+  display: flex;
+
+  list-style-type: none;
+  justify-content: space-around;
+  margin: 2px;
+  border-radius: 5px;
+  /* margin-left: 300px; */
+}
+.Listhead {
+  display: flex;
+  flex-direction: column;
+  /* padding: 10px; */
+  justify-content: center;
+  /* height: 100vh; */
+  height: 50px;
+}
+.Listhead ul li {
+  width: 200px;
+  display: flex;
+  /* background-color: rgb(44, 136, 116); */
+  justify-content: center;
+}
+.Listhead button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+}
+.Listhead {
+  background-color: rgb(127, 129, 255);
+  /* margin-left: 300px; */
+}
+.Listhead button:hover {
+  color: red;
+  optional: hover effect;
+}
+.status-li {
+  padding: 2px;
+  border-radius: 100px;
+}
