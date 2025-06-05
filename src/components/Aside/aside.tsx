@@ -16,15 +16,14 @@ export const Aside = () => {
         </div>
 
         <div>
-          <button
-            type="button" className="logout"
-            onClick={() => {
+          <ClickButton
+            label={"Log Out"}
+            type="button"
+            fun={() => {
               localStorage.setItem("IsLoggedIn", "false");
               navigate("/");
             }}
-          >
-            log out
-          </button>
+          ></ClickButton>
         </div>
       </nav>
     </aside>

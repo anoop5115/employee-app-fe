@@ -9,10 +9,10 @@ import { CreateEmployeePage } from "./Pages/CreateEmployee/CreateEmployee";
 import { Login } from "./Pages/Login/Login";
 
 import NotFound from "./Pages/notfound";
-import { Children } from "react";
+
 import { LayoutPage } from "./components/Layout/Layout";
 import { Details } from "./Pages/details";
-import { EmployeeList } from "./components/employeelist/employeelist";
+
 import { ListEmployeePage } from "./Pages/listEmployeePage/listEmployeePage";
 import { EditEmployeePage } from "./Pages/EditEmployee/EditEmployeePage";
 import { Provider } from "react-redux";

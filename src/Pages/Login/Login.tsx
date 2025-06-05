@@ -60,7 +60,7 @@ export const Login = () => {
   let [err, setErr] = useState("");
   useEffect(() => {
     if (username.length > 10) {
-      err = "not more than 10";
+      err = "";
     } else {
       err = "";
     }
@@ -88,7 +88,7 @@ export const Login = () => {
                   onInputChange={update}
                   endorment={
                     <button
-                      style={{ float: "right", position: "relative" }}
+                      style={{}}
                       className="clear-button"
                       type="button"
                       onClick={() => {
@@ -96,7 +96,7 @@ export const Login = () => {
                         console.log("aaaaaaaaa");
                       }}
                     >
-                      CLEAR
+                      clear
                     </button>
                   }
                 ></Inputtextfield>
